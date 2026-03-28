@@ -56,6 +56,12 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+async def root():
+    """Health check endpoint."""
+    return {"status": "ok", "service": "AI Code Audit System", "version": "1.0.0"}
+
+
 def _run_audit_pipeline(audit_id: str, source_path: str, temp_dir: str):
     """Run the audit pipeline and store results."""
     import time
