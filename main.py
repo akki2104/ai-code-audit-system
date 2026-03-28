@@ -49,7 +49,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8501"],  # Streamlit default
+    allow_origins=["*"],  # Allow all origins for hosted deployment
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],

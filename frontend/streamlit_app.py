@@ -1,13 +1,14 @@
 """Streamlit UI for AI Code Audit System."""
 
 import json
+import os
 import time
 import requests
 import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 
-API_BASE = "http://127.0.0.1:8000"
+API_BASE = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
 
 st.set_page_config(
     page_title="AI Code Audit System",
