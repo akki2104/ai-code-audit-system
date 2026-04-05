@@ -27,7 +27,4 @@ services:
     startCommand: streamlit run frontend/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
     envVars:
       - key: API_BASE_URL
-        fromService:
-          name: code-audit-api
-          type: web
-          property: host
+        sync: false  # Set to your API's public Render URL, e.g. https://code-audit-api.onrender.com
