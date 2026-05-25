@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+langgraph
+langchain
+langchain-community
+langchain-openai
+langchain-ollama
+python-dotenv
+pydantic
+python-multipart
+requests
+gitpython
