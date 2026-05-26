@@ -56,9 +56,14 @@ app.add_middleware(
 )
 
 
+@app.head("/health")
+async def health_check():
+    """Ping endpoint."""
+    return
+
 @app.get("/")
 async def root():
-    """Health check endpoint."""
+    """Root endpoint."""
     return {"status": "ok", "service": "AI Code Audit System", "version": "1.0.0"}
 
 

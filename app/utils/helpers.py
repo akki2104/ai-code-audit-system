@@ -4,6 +4,14 @@ import tempfile
 import uuid
 import zipfile
 from pathlib import Path
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%H:%M:%S",
+)
+logger = logging.getLogger("audit.helpers")
 
 
 def generate_audit_id() -> str:
@@ -49,6 +57,7 @@ def clone_github_repo(repo_url: str, target_dir: str) -> str:
 
 def create_temp_directory() -> str:
     """Create a temporary directory for file processing."""
+    logger.info("Creating temporary directory for audit processing")
     return tempfile.mkdtemp(prefix="code_audit_")
 
 
